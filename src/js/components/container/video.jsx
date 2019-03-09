@@ -14,6 +14,7 @@ class Video extends Component {
 
     componentDidMount(){
       if (this._videoElementRef.current){
+        this._videoElementRef.current.src = this.props.config.src;
         this._onVideoElementLoad();
       }
     }
@@ -21,7 +22,7 @@ class Video extends Component {
     render() {
       return (
         <React.Fragment>
-            <video ref={this._videoElementRef} src={this.props.config.src} autoPlay controls playsInline></video>
+            <video ref={this._videoElementRef} autoPlay controls playsInline></video>
         </React.Fragment>
       );
     }
