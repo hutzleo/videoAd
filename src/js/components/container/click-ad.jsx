@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {AdElement} from './ad-element.jsx';
 import {EVENTS} from '../../core/events';
 import {env} from '../../core/utils';
+import propTypes from 'prop-types';
 
 /**
  * Represents an ad that will be shown between 2 time slots.
@@ -43,7 +44,9 @@ class ClickAd extends Component {
 
     render() {
         if (this.state.show) {
-            return (<AdElement config={this.props.config} onClick={this._onClick.bind(this)}></AdElement>);
+            return (
+            <AdElement config={this.props.config} onClick={this._onClick.bind(this)}></AdElement>
+            );
         } else {
             return null;
         }
@@ -51,3 +54,9 @@ class ClickAd extends Component {
 }
 
 export {ClickAd};
+
+ClickAd.propTypes = {
+    config: propTypes.object.isRequired,
+    onClick: propTypes.func,
+    videoElement: propTypes.instanceOf(Element).isRequired
+}

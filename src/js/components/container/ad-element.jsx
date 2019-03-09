@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import propTypes from 'prop-types';
 
 /**
  * pure basic ad element,
@@ -16,13 +17,19 @@ class AdElement extends Component {
 
     render() {
         if (this.props.config.element === 'button') {
-            return (<button className={this._getClasses()} onClick={this.props.onClick}>
-                        {this.props.config.text}
-                    </button>);
+            return (
+                <button className={this._getClasses()} onClick={this.props.onClick}>
+                {this.props.config.text}
+                </button>
+                );
         } else {
             return null;
         }
     }
-  }
-  
-  export {AdElement};
+}
+
+export {AdElement};
+
+AdElement.propTypes = {
+    config: propTypes.object.isRequired
+}

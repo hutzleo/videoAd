@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import {EVENTS} from './../../core/events.js'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import {EVENTS} from './../../core/events.js';
+import propTypes from 'prop-types';
 
 /**
  * Video placeholder
@@ -34,6 +35,10 @@ class Video extends Component {
           <video ref={this._videoElementRef} src={this.props.config.src} autoPlay controls playsInline></video>
       );
     }
-  }
-  
-  export {Video};
+}
+
+export {Video};
+
+Video.propTypes = {
+  config: propTypes.object.isRequired
+}

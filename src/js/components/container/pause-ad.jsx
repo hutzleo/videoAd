@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {AdElement} from './ad-element.jsx';
 import {EVENTS} from '../../core/events';
+import propTypes from 'prop-types';
 
 /**
  * A ad from the type of 'pause'
@@ -50,6 +51,12 @@ class PauseAd extends Component {
             return null;
         }
     }
-  }
-  
-  export {PauseAd};
+}
+
+export {PauseAd};
+
+PauseAd.propTypes = {
+    config: propTypes.object.isRequired,
+    onClick: propTypes.func,
+    videoElement: propTypes.instanceOf(Element).isRequired
+}

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 /**
  * An empty placehoder for a loader cmponent
@@ -11,9 +11,9 @@ class Loader extends Component {
 
     render() {
       return (
-        <div class="loader"></div>
+        <div className="loader"></div>
       );
     }
   }
-  
+
   export {Loader};

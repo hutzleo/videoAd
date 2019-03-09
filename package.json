@@ -25,6 +25,7 @@
     "node-sass": "^4.11.0",
     "postcss": "^7.0.14",
     "postcss-loader": "^3.0.0",
+    "prettier": "1.16.4",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -37,8 +38,5 @@
   },
   "resolutions": {
     "terser": "3.14.1"
-  },
-  "dependencies": {
-    "places.js": "^1.15.5"
   }
 }

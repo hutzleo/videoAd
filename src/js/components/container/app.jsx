@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {Video} from './video.jsx';
 import {AdsOverlay} from './ads-overlay.jsx';
 import {Loader} from './loader.jsx';
-import {NetworkEngine} from './../../core/network-engine.js'
-import {AnalyticsFactory} from '../../core/factory-analytics'
-import * as baseConfig from '../../base-config.json'
+import {NetworkEngine} from './../../core/network-engine.js';
+import {AnalyticsFactory} from '../../core/factory-analytics';
+import * as baseConfig from '../../base-config.json';
 
 /**
  * main application component
@@ -34,8 +34,7 @@ class App extends Component {
       this._config.video = config.video;
       this._config.ads = config.ads;
       this._config.analytics = config.analytics;
-      this.setState({'loading': false});
-      
+      this.setState({'loading': false}); 
     }
 
     componentDidMount() {
@@ -56,5 +55,5 @@ class App extends Component {
       );
     }
   }
-  
+
   export {App};
