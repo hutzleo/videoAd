@@ -1,0 +1,42 @@
+{   
+    "video": {
+        "src": "https://static.ssacdn.com/creatives/irv-biliionare_casino-port-rgl_10038/irv-biliionare_casino-port-rgl/assets/billionaire_v2.mp4"
+    },
+    "ads":[
+        {
+            "id": "1",
+            "adType": "pause",
+            "element": "button",
+            "text": "Spin",
+            "position": {
+                "vertical": "bottom",
+                "horizontal": "center"
+            },
+            "pauseTime": 4,
+            "puaseLength": 10,
+            "resumeTime": 21
+        },
+        {
+            "id": "2",
+            "adType": "click",
+            "element": "button",
+            "text": "Download now",
+            "position": {
+                "vertical": "bottom",
+                "horizontal": "center"
+            },
+            "showTime": 21,
+            "urls": {
+                "ios": "https://itunes.apple.com/us/app/billionaire-casino-slots-777/id1098617974?mt=8",
+                "android": "https://play.google.com/store/apps/details?id=com.huuuge.casino.texas&hl=en"
+            }
+        }
+    ],
+    "analytics": [
+            {
+                "type": "mocky",
+                "startPlay":"http://www.mocky.io/v2/5be098b232000072006496f5",
+                "endPlay":"http://www.mocky.io/v2/5be098d03200004d006496f6"
+            }
+    ]
+}

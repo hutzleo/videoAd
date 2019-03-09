@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    
+    .videoContainer{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    video{
+        width: 100%;
+    }
+}
+
