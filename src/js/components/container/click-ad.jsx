@@ -4,6 +4,10 @@ import {AdElement} from './ad-element.jsx';
 import {EVENTS} from '../../core/events';
 import {env} from '../../core/utils';
 
+/**
+ * Represents an ad that will be shown between 2 time slots.
+ * A click on the ad will open a link
+ */
 class ClickAd extends Component {
     constructor(props) {
       super(props);
@@ -15,18 +19,20 @@ class ClickAd extends Component {
       this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
     }
   
-    _onTimeUpdate(){
+    _onTimeUpdate() {
         if (this.state.clicked){
             return;
         }
         const time = this._videoElement.currentTime;
-        if (Math.round(time) >= this.props.config.showTime){
+        if (time >= this.props.config.startTime && time <= this.props.config.endTime){
             this.setState({show: true});
+        } else {
+            this.setState({show: false});
         }
     }
 
-    _onClick(){
-        if (env.isIOS()){
+    _onClick() {
+        if (env.isIOS()) {
           window.open(this.props.config.urls.ios ,'_blank');
         } else if (env.isAndroid()) {
           window.open(this.props.config.urls.android,'_blank');
@@ -42,5 +48,6 @@ class ClickAd extends Component {
             return null;
         }
     }
-  }
-  export {ClickAd};
+}
+
+export {ClickAd};

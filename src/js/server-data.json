@@ -25,7 +25,8 @@
                 "vertical": "bottom",
                 "horizontal": "center"
             },
-            "showTime": 21,
+            "startTime": 21,
+            "endTime": 24,
             "urls": {
                 "ios": "https://itunes.apple.com/us/app/billionaire-casino-slots-777/id1098617974?mt=8",
                 "android": "https://play.google.com/store/apps/details?id=com.huuuge.casino.texas&hl=en"

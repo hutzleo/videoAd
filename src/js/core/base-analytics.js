@@ -1,7 +1,10 @@
 import {EVENTS} from './events';
 
+/**
+ * Base class for the analytics.
+ */
 class BaseAnalytics {
-    constructor(config, videoElement){
+    constructor(config, videoElement) {
         this._videoElement = videoElement;
         this._config = config;
         this._bindEvents();
@@ -37,7 +40,7 @@ class BaseAnalytics {
         this._videoElement.removeEventListener(EVENTS.ENDED, this._onEnded.bind(this));
     }
 
-    destroy(){
+    destroy() {
         this._unbindAll();
     }
 }

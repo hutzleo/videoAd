@@ -3,6 +3,10 @@ import ReactDOM from "react-dom";
 import {AdElement} from './ad-element.jsx';
 import {EVENTS} from '../../core/events';
 
+/**
+ * A ad from the type of 'pause'
+ * This ad pauses the video on a certain time for a configured time. Then jumps to a certain point in the video
+ */
 class PauseAd extends Component {
     constructor(props) {
       super(props);
@@ -16,11 +20,11 @@ class PauseAd extends Component {
     }
   
     _onTimeUpdate(){
-        if (this.state.clicked){
+        if (this.state.clicked) {
             return;
         }
         const time = this._videoElement.currentTime;
-        if (Math.round(time) === this.props.config.pauseTime && !this._videoElement.paused){
+        if (Math.round(time) === this.props.config.pauseTime && !this._videoElement.paused) {
             this._videoElement.pause();
             this._pauseTimeout = setTimeout(() => {
                 this._videoElement.currentTime = 21;
@@ -33,7 +37,7 @@ class PauseAd extends Component {
 
     _onClick(){
         this.setState({clicked: true});
-        if (this._pauseTimeout){
+        if (this._pauseTimeout) {
             clearTimeout(this._pauseTimeout);
         }
         this._videoElement.play();
@@ -47,4 +51,5 @@ class PauseAd extends Component {
         }
     }
   }
+  
   export {PauseAd};

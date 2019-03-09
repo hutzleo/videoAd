@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import {EVENTS} from './../../core/events.js'
 
+/**
+ * Video placeholder
+ */
 class Video extends Component {
     constructor(props) {
       super(props);
       this._videoElementRef = React.createRef();
     }
 
-    _onVideoElementLoad(){
+    _onVideoElementLoad() {
       this.props.onVideoElementLoad(this._videoElementRef.current);
     }
 
-    componentDidMount(){
+    componentDidMount() {
       if (this._videoElementRef.current){
         this._onVideoElementLoad();
       }
@@ -32,4 +35,5 @@ class Video extends Component {
       );
     }
   }
+  
   export {Video};

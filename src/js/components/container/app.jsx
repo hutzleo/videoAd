@@ -7,6 +7,9 @@ import {NetworkEngine} from './../../core/network-engine.js'
 import {AnalyticsFactory} from '../../core/factory-analytics'
 import * as baseConfig from '../../base-config.json'
 
+/**
+ * main application component
+ */
 class App extends Component {
     constructor() {
       super();
@@ -18,16 +21,16 @@ class App extends Component {
       this._networkEngine = new NetworkEngine();
     }
 
-    _onVideoElementLoad(videoElement){
+    _onVideoElementLoad(videoElement) {
       this.setState({videoElement});
       this._analytics = new AnalyticsFactory(this._config.analytics, videoElement);
     }
 
-    _getAppConfig(){
+    _getAppConfig() {
       return this._networkEngine.fetch(this._config.dataUrl);
     }
 
-    _setAppConfig(config){
+    _setAppConfig(config) {
       this._config.video = config.video;
       this._config.ads = config.ads;
       this._config.analytics = config.analytics;
@@ -35,7 +38,7 @@ class App extends Component {
       
     }
 
-    componentDidMount(){
+    componentDidMount() {
       this._getAppConfig().then(config => this._setAppConfig(config));
     }
 
@@ -53,4 +56,5 @@ class App extends Component {
       );
     }
   }
+  
   export {App};

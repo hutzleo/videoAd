@@ -4,6 +4,9 @@ import {EVENTS} from '../../core/events'
 import {ClickAd} from './click-ad.jsx';
 import {PauseAd} from './pause-ad.jsx'
 
+/**
+ * Ads controller, holds all the ads that will be shown.
+ */
 class AdsOverlay extends Component {
     constructor(props) {
       super(props);
@@ -14,15 +17,15 @@ class AdsOverlay extends Component {
       this._bindEvents();
     }
 
-    _bindEvents(){
+    _bindEvents() {
       this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
     }
 
-    _onTimeUpdate(){
+    _onTimeUpdate() {
       this.setState({time: this._videoElement.currentTime});
     }
 
-    _renderAds(){
+    _renderAds() {
       return this.props.config.map(config => {
         switch (config.adType){
           case 'click':
@@ -41,4 +44,5 @@ class AdsOverlay extends Component {
       );
     }
   }
+  
   export {AdsOverlay};
