@@ -35,8 +35,8 @@
     "analytics": [
             {
                 "type": "mocky",
-                "startPlay":"http://www.mocky.io/v2/5be098b232000072006496f5",
-                "endPlay":"http://www.mocky.io/v2/5be098d03200004d006496f6"
+                "startPlay":"https://www.mocky.io/v2/5be098b232000072006496f5",
+                "endPlay":"https://www.mocky.io/v2/5be098d03200004d006496f6"
             }
     ]
 }
