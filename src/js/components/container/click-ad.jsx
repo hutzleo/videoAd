@@ -11,13 +11,13 @@ import propTypes from 'prop-types';
  */
 class ClickAd extends Component {
     constructor(props) {
-      super(props);
-      this._pauseTimeout = null;
-      this.state = {
-          show: false
-      }
-      this._videoElement = this.props.videoElement;
-      this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
+        super(props);
+        this._pauseTimeout = null;
+        this.state = {
+            show: false
+        }
+        this._videoElement = this.props.videoElement;
+        this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
     }
   
     _onTimeUpdate() {
@@ -34,12 +34,12 @@ class ClickAd extends Component {
 
     _onClick() {
         if (env.isIOS()) {
-          window.open(this.props.config.urls.ios ,'_blank');
+            window.open(this.props.config.urls.ios ,'_blank');
         } else if (env.isAndroid()) {
-          window.open(this.props.config.urls.android,'_blank');
+            window.open(this.props.config.urls.android,'_blank');
         } else {
-          window.open(this.props.config.urls.ios,'_blank');
-        }
+            window.open(this.props.config.urls.ios,'_blank');
+        }   
       }
 
     render() {

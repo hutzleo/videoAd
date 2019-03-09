@@ -10,14 +10,14 @@ import propTypes from 'prop-types';
  */
 class PauseAd extends Component {
     constructor(props) {
-      super(props);
-      this._pauseTimeout = null;
-      this.state = {
-          show: false,
-          clicked: false
-      }
-      this._videoElement = this.props.videoElement;
-      this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
+        super(props);
+        this._pauseTimeout = null;
+        this.state = {
+            show: false,
+            clicked: false
+        }
+        this._videoElement = this.props.videoElement;
+        this._videoElement.addEventListener(EVENTS.TIME_UPDATE, this._onTimeUpdate.bind(this));
     }
   
     _onTimeUpdate(){

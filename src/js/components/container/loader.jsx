@@ -6,14 +6,14 @@ import ReactDOM from 'react-dom';
  */
 class Loader extends Component {
     constructor() {
-      super();
+        super();
     }
 
     render() {
-      return (
-        <div className="loader"></div>
-      );
+        return (
+            <div className="loader"></div>
+        );
     }
-  }
+}
 
-  export {Loader};
+export {Loader};

@@ -8,7 +8,7 @@ import propTypes from 'prop-types';
  */
 class AdElement extends Component {
     constructor(props) {
-      super(props);
+        super(props);
     }
 
     _getClasses() {
