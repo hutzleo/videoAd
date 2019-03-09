@@ -19,11 +19,17 @@ class Video extends Component {
       }
     }
 
+    shouldComponentUpdate(nextProps) {
+      if (this.props.config && nextProps.config.src === this.props.config.src) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
     render() {
       return (
-        <React.Fragment>
-            <video ref={this._videoElementRef} autoPlay controls playsInline></video>
-        </React.Fragment>
+          <video ref={this._videoElementRef} autoPlay controls playsInline></video>
       );
     }
   }
