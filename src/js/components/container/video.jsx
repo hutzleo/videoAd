@@ -27,7 +27,6 @@ class Video extends Component {
     }
 
     render() {
-      console.log('render');
       return (
           <video ref={this._videoElementRef} src={this.props.config.src} autoPlay controls playsInline></video>
       );
