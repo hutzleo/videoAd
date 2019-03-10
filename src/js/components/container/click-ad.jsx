@@ -21,11 +21,11 @@ class ClickAd extends Component {
     }
   
     _onTimeUpdate() {
-        if (this.state.clicked){
+        if (this.state.clicked) {
             return;
         }
         const time = this._videoElement.currentTime;
-        if (time >= this.props.config.startTime && time <= this.props.config.endTime){
+        if (Math.round(time) >= this.props.config.startTime && Math.round(time) <= this.props.config.endTime){
             this.setState({show: true});
         } else {
             this.setState({show: false});
@@ -39,13 +39,13 @@ class ClickAd extends Component {
             window.open(this.props.config.urls.android,'_blank');
         } else {
             window.open(this.props.config.urls.ios,'_blank');
-        }   
+        }
       }
 
     render() {
         if (this.state.show) {
             return (
-            <AdElement config={this.props.config} onClick={this._onClick.bind(this)}></AdElement>
+                <AdElement config={this.props.config} onClick={this._onClick.bind(this)}></AdElement>
             );
         } else {
             return null;
